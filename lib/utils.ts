@@ -8,3 +8,8 @@ export function cn(...inputs: ClassValue[]) {
 export function convertToSubcurrency(amount: number, factor = 100) {
   return Math.round(amount * factor);
 }
+
+export const handleError = (error: unknown) => {
+  console.error(error);
+  throw new Error(typeof error === "string" ? error : JSON.stringify(error));
+};
