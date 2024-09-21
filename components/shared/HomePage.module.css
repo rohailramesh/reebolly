@@ -1,0 +1,74 @@
+.eventsSection {
+  color: #feb236;
+}
+.logo {
+  border: solid;
+  border-radius: 10px;
+}
+
+.mySelf {
+  color: #feb236;
+  padding: 20px;
+  background-color: black;
+  border-color: #feb236;
+}
+
+.testimonialCarousel {
+  border: solid;
+  border-color: #feb236;
+  border-radius: 10px;
+}
+
+.testimonialSection {
+  padding: 20px;
+}
+
+.textColour {
+  color: #feb236;
+}
+
+.contactForm {
+  padding: 30px;
+  background-color: black;
+  border-color: #feb236;
+  color: #feb236;
+  border-radius: 10px;
+}
+
+.card {
+  border-color: #feb236;
+  color: #feb236;
+  border: solid;
+}
+
+.btn {
+  background-color: #feb236;
+  color: black;
+}
+
+.fontColour {
+  color: #feb236;
+}
+
+.collectionCard {
+  border-radius: 20px;
+  border-color: #feb236;
+}
+
+.myTickets {
+  border-color: #feb236;
+  color: #feb236;
+  border: solid;
+  border-radius: 20px;
+}
+
+.workHeadings {
+  color: #feb236;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.eventDetailsImage {
+  width: 100%;
+  height: 100%;
+  /* background-position: top; */
+}

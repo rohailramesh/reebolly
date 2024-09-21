@@ -19,3 +19,10 @@ export type CreateEvent = {
   price: string;
   path: string;
 };
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  imgSrc: string;
+};
