@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import { UploadButton } from "@/lib/utils";
 
 const EventForm: React.FC = () => {
   // Define state for each form field
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [startDateTime, setStartDateTime] = useState("");
   const [endDateTime, setEndDateTime] = useState("");
   const [price, setPrice] = useState("");
@@ -79,12 +80,19 @@ const EventForm: React.FC = () => {
         />
       </div>
       <div>
-        <label htmlFor="imageUrl">Image URL</label>
-        <input
-          id="imageUrl"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
+        <UploadButton
+          endpoint="imageUploader"
+          onClientUploadComplete={(res) => {
+            if (res && res.length > 0) {
+              setImageUrl(res[0].url); // Use the first file's URL
+            }
+            alert("Upload Completed");
+          }}
+          onUploadError={(error: Error) => {
+            alert(`Upload Error: ${error.message}`);
+          }}
         />
+        {imageUrl && <img src={imageUrl} alt="Uploaded Event" width="200" />}
       </div>
       <div>
         <label htmlFor="startDateTime">Start Date and Time</label>

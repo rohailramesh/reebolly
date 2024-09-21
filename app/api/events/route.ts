@@ -3,12 +3,15 @@ import {
   getAllEvents,
   getEventById,
 } from "@/lib/actions/event.actions";
+import { revalidatePath } from "next/cache";
+
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
     const event = await request.json();
     const createdEvent = await createEvent(event);
+    revalidatePath("/");
     return NextResponse.json({ createdEvent });
   } catch (error) {
     console.error("Internal Error:", error);

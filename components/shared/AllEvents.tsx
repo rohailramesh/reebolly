@@ -52,7 +52,7 @@ const AllEvents = () => {
               <h2>{event.title}</h2>
               <p>{event.description}</p>
               <p>{event.location}</p>
-              <p>{event.imageUrl}</p>
+              <img src={event.imageUrl} alt={event.title} width="200" />
               <p>Start: {new Date(event.startDateTime).toLocaleString()}</p>
               <p>End: {new Date(event.endDateTime).toLocaleString()}</p>
               <p>{event.price}</p>

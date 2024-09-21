@@ -1,7 +1,8 @@
 import React from "react";
+import EventForm from "@/components/shared/EventForm";
 
 const CreateEvent = () => {
-  return <div>Form for creating an event</div>;
+  return <EventForm />;
 };
 
 export default CreateEvent;
