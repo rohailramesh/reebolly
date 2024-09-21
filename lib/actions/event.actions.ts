@@ -29,3 +29,14 @@ export async function getAllEvents() {
     handleError(error);
   }
 }
+
+//get event by id
+export async function getEventById(id: string) {
+  try {
+    await connectToDatabase();
+    const event = await Event.findById(id);
+    return JSON.parse(JSON.stringify(event));
+  } catch (error) {
+    handleError(error);
+  }
+}
