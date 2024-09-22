@@ -61,7 +61,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({ amount }) => {
       elements,
       clientSecret,
       confirmParams: {
-        return_url: `http://reebolly.vercel.app//payment-success?amount=${amount}`,
+        return_url: `http://localhost:3000//payment-success?amount=${amount}`,
       },
     });
     if (error) {
