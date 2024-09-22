@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import CheckoutPage from "@/components/shared/CheckoutPage";
+import Image from "next/image";
+import styles from "@/components/shared/EventPage.module.css";
 import { convertToSubcurrency } from "@/lib/utils";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -60,17 +62,28 @@ const EventPage = () => {
   }
 
   return (
-    <>
-      <div>
-        <h1>{event.title}</h1>
-        <p>{event.description}</p>
-        <p>{event.location}</p>
-        <img src={event.imageUrl} alt={event.title} />
-        <p>Start: {new Date(event.startDateTime).toLocaleString()}</p>
-        <p>End: {new Date(event.endDateTime).toLocaleString()}</p>
-        <p>Price: £{event.price}</p>
+    <div className={styles.container}>
+      <div className={styles.eventDetails}>
+        <h1 className={styles.title}>{event.title}</h1>
+        <Image
+          src={event.imageUrl}
+          alt={event.title}
+          width={800}
+          height={500}
+          className={styles.image}
+        />
+        <p className={styles.description}>{event.description}</p>
+        <p className={styles.location}>Location: {event.location}</p>
+        <p className={styles.dateTime}>
+          Start: {new Date(event.startDateTime).toLocaleString()}
+        </p>
+        <p className={styles.dateTime}>
+          End: {new Date(event.endDateTime).toLocaleString()}
+        </p>
+        <p className={styles.price}>Price: £{event.price}</p>
       </div>
-      <div>
+
+      <div className={styles.checkoutSection}>
         <Elements
           stripe={stripePromise}
           options={{
@@ -82,7 +95,7 @@ const EventPage = () => {
           <CheckoutPage amount={event.price} />
         </Elements>
       </div>
-    </>
+    </div>
   );
 };
 

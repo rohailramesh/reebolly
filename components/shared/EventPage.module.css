@@ -1,0 +1,111 @@
+/* Mobile-first approach */
+
+/* Container for the event page */
+.container {
+  display: block;
+  padding: 1rem;
+  background-color: #f8f9fa; /* Light background */
+}
+
+/* Event details section */
+.eventDetails {
+  margin-bottom: 2rem;
+}
+
+/* Event title */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Event image */
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Event description */
+.description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Location, date, and price */
+.location,
+.dateTime,
+.price {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+/* Checkout section */
+.checkoutSection {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* For tablets and above */
+@media (min-width: 640px) {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two-column layout */
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .eventDetails {
+    margin-bottom: 0; /* Align with checkout on larger screens */
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .image {
+    height: auto;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .location,
+  .dateTime,
+  .price {
+    font-size: 1.1rem;
+  }
+
+  .checkoutSection {
+    align-self: start;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1024px) {
+  .container {
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .checkoutSection {
+    padding: 2rem;
+  }
+}

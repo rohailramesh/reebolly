@@ -17,7 +17,7 @@ const Header = () => {
           />
         </Link>
         <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-          <Link href="/">Attend Workshops</Link>
+          <Link href="/#all-events">Attend Workshops</Link>
         </Button>
       </div>
     </header>

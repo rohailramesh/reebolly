@@ -5,6 +5,7 @@ import Image from "next/image"; // Use Next.js Image for optimization
 import styles from "@/components/shared/HomePage.module.css"; // Adjust the path as necessary
 import cardStyles from "@/components/shared/Card.module.css"; // Adjust the path as necessary
 import { formatDateTime } from "@/lib/utils"; // Assuming you have a utility for formatting dates
+import { Button } from "../ui/button";
 
 type Event = {
   _id: string;
@@ -49,11 +50,21 @@ const AllEvents = () => {
 
   return (
     <>
-      <div>
-        <h1>All Events</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div id="all-events">
+        <h1
+          className={`text-center text-2xl font-bold mb-8 text-orange-500 ${cardStyles.EventHeadings}`}
+        >
+          UPCOMING EVENTS
+        </h1>
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ${cardStyles.eventsContainer}`}
+        >
           {events.length === 0 ? (
-            <p>No events found.</p>
+            <h3
+              className={`text-center text-2xl flex justify-center font-bold mb-8 text-orange-500 ${cardStyles.noEvents}`}
+            >
+              No events found... Check back later!
+            </h3>
           ) : (
             events.map((event) => (
               <div
@@ -67,22 +78,25 @@ const AllEvents = () => {
                       alt={event.title}
                       layout="responsive"
                       width={400}
-                      height={300}
+                      height={400}
                       className="rounded-t-xl"
                     />
                   </div>
                 </Link>
 
-                <div className="flex flex-col p-5">
+                <div className="flex flex-col p-5 gap-5">
                   <Link href={`/events/${event._id}`}>
                     <h2
                       className={`text-lg font-semibold ${styles.fontColour}`}
                     >
-                      {event.title}
+                      Event: {event.title}
                     </h2>
                   </Link>
                   <p className={`text-gray-400 ${styles.fontColour}`}>
-                    {event.description}
+                    Event info:{" "}
+                    {event.description.length > 100
+                      ? `${event.description.substring(0, 100)}...`
+                      : event.description}
                   </p>
                   <p className={`text-gray-300 ${styles.fontColour}`}>
                     Location: {event.location}
@@ -91,15 +105,20 @@ const AllEvents = () => {
                     Start: {formatDateTime(event.startDateTime).dateTime}
                   </p>
                   <p className={`text-gray-300 ${styles.fontColour}`}>
+                    End: {formatDateTime(event.endDateTime).dateTime}
+                  </p>
+                  <p className={`text-gray-300 ${styles.fontColour}`}>
                     Price: {event.price > 0 ? `£${event.price}` : "FREE"}
                   </p>
                 </div>
                 <div className="flex justify-end p-3">
-                  <Link href={`/events/${event._id}`}>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded">
-                      View Details
-                    </button>
-                  </Link>
+                  <Button
+                    asChild
+                    className={`rounded-full ${styles.btn}`}
+                    size="sm"
+                  >
+                    <Link href={`/events/${event._id}`}>View Details</Link>
+                  </Button>
                 </div>
               </div>
             ))
