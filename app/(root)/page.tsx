@@ -28,7 +28,7 @@ const HomePage = () => {
             <p className="p-regular-20 md:p-regular-24">
               Reeha is a trained dancer for 5+ years but has a passion of
               dancing since childhood. Spreading the love of dance and life
-              through dance styles such as Afro, Hip-Hop, Contemppary,
+              through dance styles such as Afro, Hip-Hop, Contemporary,
               Semi-Classical and Bachata through Bollywood workshops and
               tutorials. Already on your toes after reading this? Join me in one
               of my workshops!
