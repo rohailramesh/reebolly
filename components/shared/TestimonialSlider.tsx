@@ -20,9 +20,9 @@ export default function TestimonialSlider({
   return (
     <>
       <h1
-        className={`text-center text-2xl font-bold mb-8 text-orange-500 ${styles.textColour}`}
+        className={`text-center text-2xl font-bold mb-2 mt-10 ${styles.fontColour}`}
       >
-        What others have to say
+        Hear From Others!
         <br />↔
       </h1>
       <section className={`w-full py-4 ${styles.testimonialSection}`}>

@@ -1,5 +1,5 @@
 .eventsSection {
-  color: #feb236;
+  color: #643a4e;
 }
 .logo {
   border: solid;
@@ -7,15 +7,15 @@
 }
 
 .mySelf {
-  color: #feb236;
+  color: #643a4e;
   padding: 20px;
-  background-color: black;
-  border-color: #feb236;
+  /* background-color: black; */
+  border-color: #643a4e;
 }
 
 .testimonialCarousel {
   border: solid;
-  border-color: #feb236;
+  border-color: #643a4e;
   border-radius: 10px;
 }
 
@@ -24,51 +24,76 @@
 }
 
 .textColour {
-  color: #feb236;
+  color: #643a4e;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .contactForm {
   padding: 30px;
-  background-color: black;
-  border-color: #feb236;
-  color: #feb236;
+  /* background-color: black; */
+  border-color: #643a4e;
+  color: #643a4e;
   border-radius: 10px;
 }
 
 .card {
-  border-color: #feb236;
-  color: #feb236;
+  border-color: #643a4e;
+  color: #643a4e;
   border: solid;
 }
 
 .btn {
-  background-color: #feb236;
-  color: black;
+  background-color: #643a4e;
+  color: white;
 }
 
 .fontColour {
-  color: #feb236;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .collectionCard {
-  border-radius: 20px;
-  border-color: #feb236;
+  /* border-radius: 20px; */
+  border-color: #643a4e;
 }
 
 .myTickets {
-  border-color: #feb236;
-  color: #feb236;
+  border-color: #643a4e;
+  color: #643a4e;
   border: solid;
   border-radius: 20px;
 }
 
 .workHeadings {
-  color: #feb236;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #643a4e;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .eventDetailsImage {
   width: 100%;
   height: 100%;
   /* background-position: top; */
+}
+.workHeadings {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+  /* margin-top: 25px; */
+}
+.experienceHeading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+  margin-top: -40px;
+  font-size: 2.5rem;
+}
+
+.projectsHeading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+  margin-top: 40px;
+  font-size: 2.5rem;
+}
+
+.experienceGrid {
+  gap: 12rem;
+  margin-top: 5rem;
 }

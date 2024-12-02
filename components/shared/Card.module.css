@@ -28,7 +28,7 @@
 
 .card {
   border: solid;
-  border-color: #feb236;
+  border-color: #643a4e;
 }
 
 .eventsContainer {
@@ -36,16 +36,16 @@
 }
 
 .EventHeadings {
-  color: #feb236;
+  color: #643a4e;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .noEvents {
-  color: #feb236;
+  color: #643a4e;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   border: solid;
-  border-color: #feb236;
+  /* border-color: #643a4e; */
   border-radius: 10px;
   padding: 20px;
 }

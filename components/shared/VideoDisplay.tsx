@@ -15,16 +15,18 @@ const VideoDisplay = () => {
   }
 
   return (
-    <div className={styles.videoContainer}>
-      <video
-        className={styles.video}
-        src="/assets/videos/reeha-video.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-    </div>
+    <>
+      <div className={styles.videoContainer}>
+        <video
+          className={styles.video}
+          src="/assets/videos/reeha-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
+    </>
   );
 };
 

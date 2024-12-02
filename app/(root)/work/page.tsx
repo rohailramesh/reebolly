@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button";
 const MyWorkAndProjects = () => {
   return (
     <>
-      <section className="wrapper my-8">
+      <section className="wrapper my-20">
         <Experience />
       </section>
-      <br />
+      {/* <br /> */}
 
-      <section className="wrapper my-8">
+      <section className="wrapper my-20">
         <Project />
       </section>
       <br />

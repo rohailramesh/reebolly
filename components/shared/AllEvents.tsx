@@ -52,7 +52,7 @@ const AllEvents = () => {
     <>
       <div id="all-events">
         <h1
-          className={`text-center text-2xl font-bold mb-8 text-orange-500 ${cardStyles.EventHeadings}`}
+          className={`text-center text-2xl font-bold mb-2 mt-2 text-white ${styles.workHeadings}`}
         >
           UPCOMING EVENTS
         </h1>
@@ -69,7 +69,7 @@ const AllEvents = () => {
             events.map((event) => (
               <div
                 key={event._id}
-                className={`group relative flex flex-col overflow-hidden rounded-xl bg-black shadow-md transition-all hover:shadow-lg ${cardStyles.card}`}
+                className={`group relative flex flex-col overflow-hidden rounded-x shadow-md transition-all hover:shadow-lg ${cardStyles.card}`}
               >
                 <Link href={`/events/${event._id}`}>
                   <div className={cardStyles.imageContainer}>
