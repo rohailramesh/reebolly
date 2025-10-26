@@ -12,6 +12,7 @@ const Footer = () => (
             alt="Instagram"
             width={24}
             height={24}
+            layout="responsive"
           />
         </Link>
         <Link
@@ -23,6 +24,7 @@ const Footer = () => (
             alt="TikTok"
             width={24}
             height={24}
+            layout="responsive"
           />
         </Link>
       </div>
@@ -41,6 +43,7 @@ const Footer = () => (
             alt="logo"
             width={128}
             height={38}
+            layout="responsive"
           />
         </Link>
       </div>

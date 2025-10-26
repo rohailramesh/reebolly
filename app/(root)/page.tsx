@@ -52,6 +52,7 @@ const HomePage = () => {
             width={1000}
             height={1000}
             className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh] rounded-lg"
+            layout="responsive"
           />
           <p className="p-regular-20 md:p-regular-24">
             Reeha has been passionately dancing since childhood and is

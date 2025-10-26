@@ -71,6 +71,7 @@ const EventPage = () => {
           width={800}
           height={500}
           className={styles.image}
+          layout="responsive"
         />
         <p className={styles.description}>{event.description}</p>
         <p className={styles.location}>Location: {event.location}</p>

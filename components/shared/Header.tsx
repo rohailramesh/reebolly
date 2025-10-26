@@ -38,6 +38,7 @@ const Header = () => {
               height={38}
               alt="logo"
               className={styles.logo}
+              layout="responsive"
             />
           </Link>
           <div className="flex flex-col items-start">
@@ -76,6 +77,7 @@ const Header = () => {
               height={38}
               alt="logo"
               className={styles.logo}
+              layout="responsive"
             />
           </Link>
 

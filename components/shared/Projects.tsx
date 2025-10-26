@@ -46,6 +46,7 @@ export default function Project() {
                   width={event.width}
                   height={event.height}
                   className="rounded-lg object-cover mt-1"
+                  layout="responsive"
                 />
                 {/* Click Prompt */}
                 <div className="mt-4 flex flex-col items-center">
