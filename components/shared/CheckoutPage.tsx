@@ -9,9 +9,15 @@ import { convertToSubcurrency } from "@/lib/utils";
 
 interface CheckoutPageProps {
   amount: number;
+  eventId: string;
 }
-
-const CheckoutPage: React.FC<CheckoutPageProps> = ({ amount }) => {
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+const specialEventLinks: Record<string, string> = {
+  "Summer Bash 2026": "https://example.com/summer-bash-info",
+  "Winter Gala": "https://example.com/winter-gala-info",
+  "Bollywood Night": "https://example.com/bollywood-night-info",
+};
+const CheckoutPage: React.FC<CheckoutPageProps> = ({ amount, eventId }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -61,7 +67,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({ amount }) => {
       elements,
       clientSecret,
       confirmParams: {
-        return_url: `http://reebolly.co.uk//payment-success?amount=${amount}`,
+        return_url: `${baseUrl}/payment-success?amount=${amount}&eventId=${eventId}`,
       },
     });
     if (error) {
