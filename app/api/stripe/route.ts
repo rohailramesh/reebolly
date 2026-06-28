@@ -9,7 +9,9 @@ export async function POST(request: NextRequest) {
       amount: amount,
       currency: "gbp",
       automatic_payment_methods: { enabled: true }, // allows other payment methods enabled in the Dashboard
+      description: "Test Payment",
     });
+    console.log(paymentIntent);
 
     return NextResponse.json({ clientSecret: paymentIntent.client_secret });
   } catch (error) {

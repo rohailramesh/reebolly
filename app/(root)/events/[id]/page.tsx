@@ -93,7 +93,7 @@ const EventPage = () => {
             currency: "gbp",
           }}
         >
-          <CheckoutPage amount={event.price} />
+          <CheckoutPage amount={event.price} eventId={event._id} />
         </Elements>
       </div>
     </div>

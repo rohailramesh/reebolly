@@ -32,7 +32,7 @@ const Footer = () => (
       {/* Footer Text */}
       <div className="text-center sm:text-right mt-4 sm:mt-0">
         <p className="text-primary-500 text-sm">
-          © REEHA R. 2024. All Rights Reserved.
+          © REEHA R. 2026. All Rights Reserved.
         </p>
       </div>
       {/* Logo Section */}
