@@ -12,7 +12,7 @@ import styles from "@/components/shared/HomePage.module.css";
 const HomePage = () => {
   return (
     <>
-      <section className="h-[80vh] w-full">
+      <section className="mt-2 w-full">
         {/* Video section */}
         <VideoDisplay />
       </section>

@@ -19,7 +19,7 @@ const VideoDisplay = () => {
       <div className={styles.videoContainer}>
         <video
           className={styles.video}
-          src="/assets/videos/reeha-video.mp4"
+          src="https://errgx59tzy.ufs.sh/f/iYlJlfjQAbJKcNCJF5I60ad1LGYziMIrZmwDsce5FW8fvjtE"
           autoPlay
           loop
           muted
