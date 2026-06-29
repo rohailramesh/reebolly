@@ -52,7 +52,7 @@ const AllEvents = () => {
     <>
       <div id="all-events">
         <h1
-          className={`text-center text-2xl font-bold mb-2 mt-2 text-white ${styles.workHeadings}`}
+          className={`text-center text-2xl font-bold mb-3 mt-5 text-white ${styles.workHeadings}`}
         >
           UPCOMING EVENTS
         </h1>
