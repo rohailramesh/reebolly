@@ -1,0 +1,222 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Video Container */
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Gradient overlay for readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(48, 36, 33, 0.3) 0%,
+    rgba(48, 36, 33, 0.5) 50%,
+    rgba(48, 36, 33, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Hero Content */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Eyebrow */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #E8D5C4; /* Champagne */
+  margin-bottom: 0.5rem;
+}
+
+/* Main Headlines */
+.mainHeadline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  color: #FAF7F2; /* Ivory */
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.headlineLine {
+  display: block;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.headlineLine:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.headlineLine:nth-child(2) {
+  animation-delay: 0.2s;
+  color: #D9A6A0; /* Dusty Rose accent */
+}
+
+.headlineLine:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Supporting Copy */
+.supportingCopy {
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  color: #FAF7F2; /* Ivory */
+  max-width: 700px;
+  margin: 1rem 0 2rem;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+/* CTA Group */
+.ctaGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeInUp 0.8s ease-out 0.5s backwards;
+}
+
+@media (min-width: 640px) {
+  .ctaGroup {
+    flex-direction: row;
+    max-width: none;
+    justify-content: center;
+  }
+}
+
+.primaryCta {
+  background-color: #B85C5C; /* Terracotta */
+  color: #FAF7F2; /* Ivory */
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.25rem 2.5rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.primaryCta:hover {
+  background-color: #A04848; /* Terracotta Dark */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 92, 92, 0.4);
+}
+
+.secondaryCta {
+  background-color: transparent;
+  color: #FAF7F2; /* Ivory */
+  border: 2px solid #FAF7F2;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.25rem 2.5rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.secondaryCta:hover {
+  background-color: #FAF7F2;
+  color: #302421; /* Espresso */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(250, 247, 242, 0.3);
+}
+
+/* Credibility Line */
+.credibility {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: #E8D5C4; /* Champagne */
+  margin-top: 1rem;
+  animation: fadeInUp 0.8s ease-out 0.6s backwards;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 85vh;
+  }
+  
+  .contentWrapper {
+    gap: 1rem;
+  }
+  
+  .supportingCopy br {
+    display: none;
+  }
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .headlineLine,
+  .supportingCopy,
+  .ctaGroup,
+  .credibility {
+    animation: none;
+  }
+  
+  .primaryCta:hover,
+  .secondaryCta:hover {
+    transform: none;
+  }
+}

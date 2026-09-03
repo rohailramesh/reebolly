@@ -50,79 +50,79 @@ const AllEvents = () => {
 
   return (
     <>
-      <div id="all-events">
-        <h1
-          className={`text-center text-2xl font-bold mb-3 mt-5 text-white ${styles.workHeadings}`}
-        >
-          UPCOMING EVENTS
-        </h1>
-        <div
-          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ${cardStyles.eventsContainer}`}
-        >
-          {events.length === 0 ? (
-            <h3
-              className={`text-center text-2xl flex justify-center font-bold mb-8 text-orange-500 ${cardStyles.noEvents}`}
-            >
-              No events found... Check back later!
-            </h3>
-          ) : (
-            events.map((event) => (
-              <div
-                key={event._id}
-                className={`group relative flex flex-col overflow-hidden rounded-x shadow-md transition-all hover:shadow-lg ${cardStyles.card}`}
-              >
-                <Link href={`/events/${event._id}`}>
-                  <div className={cardStyles.imageContainer}>
-                    <Image
-                      src={event.imageUrl}
-                      alt={event.title}
-                      layout="responsive"
-                      width={400}
-                      height={400}
-                      className="rounded-t-xl"
-                    />
-                  </div>
-                </Link>
+      <div id="all-events" className="section bg-champagne">
+        <div className="wrapper">
+          <div className="text-center mb-12">
+            <h2 className="heading-editorial text-4xl md:text-5xl mb-4">
+              WHAT'S COMING UP
+            </h2>
+            <p className="font-sans text-lg text-espresso/80 max-w-2xl mx-auto">
+              Join us for upcoming workshops, classes, and dance experiences designed for all levels.
+            </p>
+          </div>
 
-                <div className="flex flex-col p-5 gap-5">
-                  <Link href={`/events/${event._id}`}>
-                    <h2
-                      className={`text-lg font-semibold ${styles.fontColour}`}
-                    >
-                      Event: {event.title}
-                    </h2>
-                  </Link>
-                  <p className={`text-gray-400 ${styles.fontColour}`}>
-                    Event info:{" "}
-                    {event.description.length > 100
-                      ? `${event.description.substring(0, 100)}...`
-                      : event.description}
-                  </p>
-                  <p className={`text-gray-300 ${styles.fontColour}`}>
-                    Location: {event.location}
-                  </p>
-                  <p className={`text-gray-300 ${styles.fontColour}`}>
-                    Start: {formatDateTime(event.startDateTime).dateTime}
-                  </p>
-                  <p className={`text-gray-300 ${styles.fontColour}`}>
-                    End: {formatDateTime(event.endDateTime).dateTime}
-                  </p>
-                  <p className={`text-gray-300 ${styles.fontColour}`}>
-                    Price: {event.price > 0 ? `£${event.price}` : "FREE"}
-                  </p>
-                </div>
-                <div className="flex justify-end p-3">
-                  <Button
-                    asChild
-                    className={`rounded-full ${styles.btn}`}
-                    size="sm"
-                  >
-                    <Link href={`/events/${event._id}`}>View Details</Link>
-                  </Button>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {events.length === 0 ? (
+              <div className="col-span-full">
+                <h3
+                  className={`text-center text-2xl font-bold mb-8 ${cardStyles.noEvents}`}
+                >
+                  No events found... Check back later!
+                </h3>
               </div>
-            ))
-          )}
+            ) : (
+              events.map((event) => (
+                <div
+                  key={event._id}
+                  className={`group relative flex flex-col overflow-hidden rounded-xl shadow-md transition-all hover:shadow-lg ${cardStyles.card}`}
+                >
+                  <Link href={`/events/${event._id}`}>
+                    <div className={cardStyles.imageContainer}>
+                      <Image
+                        src={event.imageUrl}
+                        alt={event.title}
+                        layout="responsive"
+                        width={400}
+                        height={400}
+                        className="rounded-t-xl"
+                      />
+                    </div>
+                  </Link>
+
+                  <div className="flex flex-col p-5 gap-5">
+                    <Link href={`/events/${event._id}`}>
+                      <h2 className="text-lg font-semibold font-serif text-espresso">
+                        {event.title}
+                      </h2>
+                    </Link>
+                    <p className="text-sm text-espresso/80 font-sans">
+                      {event.description.length > 100
+                        ? `${event.description.substring(0, 100)}...`
+                        : event.description}
+                    </p>
+                    <p className="text-sm text-espresso/70 font-sans">
+                      📍 {event.location}
+                    </p>
+                    <p className="text-sm text-espresso/70 font-sans">
+                      🕒 {formatDateTime(event.startDateTime).dateTime}
+                    </p>
+                    <p className="text-lg font-semibold text-terracotta font-sans">
+                      {event.price > 0 ? `£${event.price}` : "FREE"}
+                    </p>
+                  </div>
+                  <div className="flex justify-end p-3">
+                    <Button
+                      asChild
+                      className={`rounded-full ${styles.btn}`}
+                      size="sm"
+                    >
+                      <Link href={`/events/${event._id}`}>View Details</Link>
+                    </Button>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </>

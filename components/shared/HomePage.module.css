@@ -1,99 +1,135 @@
 .eventsSection {
-  color: #643a4e;
+  color: #302421; /* Espresso */
 }
 .logo {
-  border: solid;
+  border: 2px solid #E8D5C4; /* Champagne */
   border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.logo:hover {
+  border-color: #B85C5C; /* Terracotta */
 }
 
 .mySelf {
-  color: #643a4e;
+  color: #302421; /* Espresso */
   padding: 20px;
-  /* background-color: black; */
-  border-color: #643a4e;
+  background-color: #FAF7F2; /* Ivory */
+  border-color: #E8D5C4; /* Champagne */
 }
 
 .testimonialCarousel {
-  border: solid;
-  border-color: #643a4e;
+  border: 2px solid #E8D5C4; /* Champagne */
   border-radius: 10px;
+  background-color: #FAF7F2; /* Ivory */
+  transition: all 0.3s ease;
+}
+
+.testimonialCarousel:hover {
+  border-color: #B85C5C; /* Terracotta */
+  box-shadow: 0 4px 12px rgba(184, 92, 92, 0.1);
 }
 
 .testimonialSection {
   padding: 20px;
+  background-color: #E8D5C4; /* Champagne */
 }
 
 .textColour {
-  color: #643a4e;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #302421; /* Espresso */
+  font-family: var(--font-serif);
 }
 
 .contactForm {
   padding: 30px;
-  /* background-color: black; */
-  border-color: #643a4e;
-  color: #643a4e;
+  background-color: #FAF7F2; /* Ivory */
+  border: 2px solid #E8D5C4; /* Champagne */
+  color: #302421; /* Espresso */
   border-radius: 10px;
 }
 
 .card {
-  border-color: #643a4e;
-  color: #643a4e;
-  border: solid;
+  border: 2px solid #E8D5C4; /* Champagne */
+  color: #302421; /* Espresso */
+  background-color: #FAF7F2; /* Ivory */
 }
 
 .btn {
-  background-color: #643a4e;
-  color: white;
+  background-color: #B85C5C; /* Terracotta */
+  color: #FAF7F2; /* Ivory */
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #A04848; /* Terracotta Dark */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 92, 92, 0.3);
 }
 
 .fontColour {
-  color: white;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #302421; /* Espresso */
+  font-family: var(--font-serif);
 }
 
 .collectionCard {
-  /* border-radius: 20px; */
-  border-color: #643a4e;
+  border-radius: 12px;
+  border: 2px solid #E8D5C4; /* Champagne */
 }
 
 .myTickets {
-  border-color: #643a4e;
-  color: #643a4e;
-  border: solid;
+  border: 2px solid #E8D5C4; /* Champagne */
+  color: #302421; /* Espresso */
+  background-color: #FAF7F2; /* Ivory */
   border-radius: 20px;
 }
 
 .workHeadings {
-  color: #643a4e;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #302421; /* Espresso */
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .eventDetailsImage {
   width: 100%;
   height: 100%;
-  /* background-position: top; */
+  object-fit: cover;
+  border-radius: 8px;
 }
+
 .workHeadings {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: white;
-  /* margin-top: 25px; */
+  font-family: var(--font-serif);
+  color: #302421; /* Espresso */
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
+
 .experienceHeading {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: white;
+  font-family: var(--font-serif);
+  color: #302421; /* Espresso */
   margin-top: -40px;
   font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .projectsHeading {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: white;
+  font-family: var(--font-serif);
+  color: #302421; /* Espresso */
   margin-top: 40px;
   font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .experienceGrid {
-  gap: 12rem;
+  gap: 8rem;
   margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .experienceGrid {
+    gap: 4rem;
+    margin-top: 3rem;
+  }
 }

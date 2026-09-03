@@ -4,65 +4,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* ReeBolly Brand Colors */
+    --color-terracotta: #B85C5C;
+    --color-champagne: #E8D5C4;
+    --color-espresso: #302421;
+    --color-ivory: #FAF7F2;
+    --color-rose: #D9A6A0;
+    --color-gold: #B99A68;
+    
+    /* Shadcn UI compatibility */
+    --background: 250 247 242; /* Warm Ivory */
+    --foreground: 48 36 33; /* Deep Espresso */
+    
+    --card: 250 247 242;
+    --card-foreground: 48 36 33;
+    
+    --popover: 250 247 242;
+    --popover-foreground: 48 36 33;
+    
+    --primary: 184 92 92; /* Terracotta */
+    --primary-foreground: 250 247 242;
+    
+    --secondary: 232 213 196; /* Champagne */
+    --secondary-foreground: 48 36 33;
+    
+    --muted: 232 213 196;
+    --muted-foreground: 48 36 33;
+    
+    --accent: 217 166 160; /* Dusty Rose */
+    --accent-foreground: 48 36 33;
+    
+    --destructive: 184 92 92;
+    --destructive-foreground: 250 247 242;
+    
+    --border: 232 213 196;
+    --input: 232 213 196;
+    --ring: 184 92 92;
+    
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -71,11 +50,75 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  border-color: rgb(var(--border));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
-  font-family: var(--font-poppins);
-  background-color: #c29790;
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: var(--color-espresso);
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-espresso);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+h4 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+h5 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+h6 {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+}
+
+p {
+  font-family: var(--font-sans);
+  color: var(--color-espresso);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-terracotta);
 }
 
 .filter-grey {
@@ -85,8 +128,17 @@ body {
 
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
+  /* Container utilities */
   .wrapper {
-    @apply max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full;
+    @apply max-w-7xl mx-auto px-5 md:px-10 xl:px-20 w-full;
+  }
+  
+  .wrapper-wide {
+    @apply max-w-[1400px] mx-auto px-5 md:px-10 xl:px-20 w-full;
+  }
+  
+  .wrapper-narrow {
+    @apply max-w-4xl mx-auto px-5 md:px-10 w-full;
   }
 
   .flex-center {
@@ -95,6 +147,47 @@ body {
 
   .flex-between {
     @apply flex justify-between items-center;
+  }
+  
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .section-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply bg-terracotta text-ivory hover:bg-terracotta-dark transition-all duration-300 px-8 py-3 rounded-full font-sans font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-champagne text-espresso hover:bg-champagne-dark transition-all duration-300 px-8 py-3 rounded-full font-sans font-medium;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-terracotta text-terracotta hover:bg-terracotta hover:text-ivory transition-all duration-300 px-8 py-3 rounded-full font-sans font-medium;
+  }
+  
+  /* Editorial headings */
+  .heading-editorial {
+    @apply font-serif text-espresso tracking-tight;
+  }
+  
+  .heading-display {
+    @apply font-serif text-5xl md:text-6xl lg:text-7xl text-espresso tracking-tight leading-none;
+  }
+  
+  /* Card styles */
+  .card-reebolly {
+    @apply bg-ivory border-2 border-champagne rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl;
+  }
+  
+  /* Focus states */
+  .focus-reebolly {
+    @apply focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2 focus:ring-offset-ivory;
   }
 
   /* TYPOGRAPHY */
@@ -207,15 +300,15 @@ body {
 
   /* SHADCN OVERRIDES */
   .select-field {
-    @apply w-full bg-grey-50 h-[54px] placeholder:text-grey-500 rounded-full p-regular-16 px-5 py-3 border-none focus-visible:ring-transparent focus:ring-transparent !important;
+    @apply w-full bg-ivory h-[54px] placeholder:text-espresso/60 rounded-full p-regular-16 px-5 py-3 border-2 border-champagne focus-visible:ring-transparent focus-visible:ring-transparent !important;
   }
 
   .input-field {
-    @apply bg-grey-50 h-[54px] focus-visible:ring-offset-0 placeholder:text-grey-500 rounded-full p-regular-16 px-4 py-3 border-none focus-visible:ring-transparent !important;
+    @apply bg-ivory h-[54px] focus-visible:ring-offset-0 placeholder:text-espresso/60 rounded-full p-regular-16 px-4 py-3 border-2 border-champagne focus-visible:ring-transparent !important;
   }
 
   .textarea {
-    @apply bg-grey-50 flex flex-1 placeholder:text-grey-500 p-regular-16 px-5 py-3 border-none focus-visible:ring-transparent !important;
+    @apply bg-ivory flex flex-1 placeholder:text-espresso/60 p-regular-16 px-5 py-3 border-2 border-champagne focus-visible:ring-transparent !important;
   }
 
   .button {
@@ -223,11 +316,11 @@ body {
   }
 
   .select-item {
-    @apply py-3 cursor-pointer  focus:bg-primary-50;
+    @apply py-3 cursor-pointer focus:bg-champagne;
   }
 
   .toggle-switch {
-    @apply bg-gray-300 !important;
+    @apply bg-champagne !important;
   }
 }
 
@@ -251,7 +344,7 @@ body {
 .cl-formButtonPrimary:hover,
 .cl-formButtonPrimary:focus,
 .cl-formButtonPrimary:active {
-  background-color: #643a4e;
+  background-color: #B85C5C; /* Terracotta */
 }
 
 /* ========================================== REACT-DATEPICKER STYLES */
@@ -267,11 +360,12 @@ body {
 }
 
 .react-datepicker__day--selected {
-  background-color: #643a4e !important;
-  color: #ffffff !important;
+  background-color: #B85C5C !important; /* Terracotta */
+  color: #FAF7F2 !important; /* Ivory */
   border-radius: 4px;
 }
 
 .react-datepicker__time-list-item--selected {
-  background-color: #643a4e !important;
+  background-color: #B85C5C !important; /* Terracotta */
+  color: #FAF7F2 !important; /* Ivory */
 }

@@ -4,7 +4,7 @@
 .container {
   display: block;
   padding: 1rem;
-  background-color: #f8f9fa; /* Light background */
+  background-color: #FAF7F2; /* Warm Ivory */
 }
 
 /* Event details section */
@@ -16,7 +16,9 @@
 .title {
   font-size: 2rem;
   font-weight: 700;
-  color: #643a4e;
+  color: #302421; /* Espresso */
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
   margin-bottom: 1rem;
 }
 
@@ -50,9 +52,10 @@
 .checkoutSection {
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: #FAF7F2; /* Ivory */
+  border: 2px solid #E8D5C4; /* Champagne */
   border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(184, 92, 92, 0.1);
 }
 
 /* For tablets and above */

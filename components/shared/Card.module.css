@@ -27,25 +27,35 @@
 }
 
 .card {
-  border: solid;
-  border-color: #643a4e;
+  border: 2px solid #E8D5C4; /* Champagne */
+  background-color: #FAF7F2; /* Ivory */
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #B85C5C; /* Terracotta */
+  box-shadow: 0 8px 24px rgba(184, 92, 92, 0.15);
+  transform: translateY(-4px);
 }
 
 .eventsContainer {
   padding: 20px;
+  background-color: #E8D5C4; /* Champagne */
 }
 
 .EventHeadings {
-  color: #643a4e;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #302421; /* Espresso */
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .noEvents {
-  color: #643a4e;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #302421; /* Espresso */
+  font-family: var(--font-serif);
   display: flex;
-  border: solid;
-  /* border-color: #643a4e; */
+  border: 2px solid #E8D5C4; /* Champagne */
+  background-color: #FAF7F2; /* Ivory */
   border-radius: 10px;
   padding: 20px;
 }

@@ -19,12 +19,17 @@ export default function TestimonialSlider({
 }: TestimonialSliderProps) {
   return (
     <>
-      <h1
-        className={`text-center text-2xl font-bold mb-2 mt-10 ${styles.fontColour}`}
-      >
-        Hear From Others!
-        <br />↔
-      </h1>
+      <div className="wrapper-narrow text-center mb-12">
+        <h2 className="heading-editorial text-4xl md:text-5xl mb-4">
+          MORE THAN A CLASS.
+        </h2>
+        <h3 className="font-serif text-2xl md:text-3xl text-terracotta mb-6">
+          IT'S A COMMUNITY.
+        </h3>
+        <p className="font-sans text-lg text-espresso/80">
+          Hear what our dancers have to say about their ReeBolly experience.
+        </p>
+      </div>
       <section className={`w-full py-4 ${styles.testimonialSection}`}>
         <div className="w-full mx-auto px-3 lg:max-w-6xl">
           <Carousel

@@ -1,4 +1,10 @@
 .btn {
-  font-family: serif;
-  font-size: medium;
+  background-color: #B85C5C; /* Terracotta */
+  color: #FAF7F2; /* Ivory */
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #A04848; /* Terracotta Dark */
+  transform: translateY(-1px);
 }

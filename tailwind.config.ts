@@ -19,54 +19,81 @@ module.exports = withUt({
     },
     extend: {
       colors: {
+        // ReeBolly Brand Colors
+        terracotta: {
+          DEFAULT: "#B85C5C", // Primary - Warm Terracotta
+          light: "#C97373",
+          dark: "#A04848",
+        },
+        champagne: {
+          DEFAULT: "#E8D5C4", // Secondary - Soft Champagne
+          light: "#F0E2D6",
+          dark: "#D9C4B0",
+        },
+        espresso: {
+          DEFAULT: "#302421", // Tertiary - Deep Espresso
+          light: "#4A3835",
+          dark: "#1A1311",
+        },
+        ivory: {
+          DEFAULT: "#FAF7F2", // Primary Background - Warm Ivory
+          light: "#FFFFFF",
+          dark: "#F0EDE8",
+        },
+        rose: {
+          DEFAULT: "#D9A6A0", // Supporting Accent - Dusty Rose
+          light: "#E5B8B3",
+          dark: "#C98F88",
+        },
+        gold: {
+          DEFAULT: "#B99A68", // Optional Accent - Antique Gold
+          light: "#C9AA7D",
+          dark: "#A58956",
+        },
+        
+        // Shadcn UI compatibility
         primary: {
-          500: "#643A4E",
-          50: " #F6F8FD",
-          DEFAULT: "#643A4E",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#B85C5C",
+          foreground: "#FAF7F2",
         },
-        coral: {
-          500: "#15BF59",
-        },
-
-        grey: {
-          600: "#545454", // Subdued - color name in figma
-          500: "#757575",
-          400: "#AFAFAF", // Disabled - color name in figma
-          50: "#F6F6F6", // White Grey - color name in figma
-        },
-        black: "#000000",
-        white: "#FFFFFF",
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        foreground: "hsl(var(--foreground))",
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#E8D5C4",
+          foreground: "#302421",
         },
+        background: "#FAF7F2",
+        foreground: "#302421",
+        
+        border: "#E8D5C4",
+        input: "#E8D5C4",
+        ring: "#B85C5C",
+        
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "#B85C5C",
+          foreground: "#FAF7F2",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#E8D5C4",
+          foreground: "#302421",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#D9A6A0",
+          foreground: "#302421",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "#FAF7F2",
+          foreground: "#302421",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "#FAF7F2",
+          foreground: "#302421",
         },
       },
       fontFamily: {
+        // Editorial serif for headings
+        serif: ["var(--font-serif)"],
+        // Modern sans-serif for body
+        sans: ["var(--font-sans)"],
+        // Legacy support
         poppins: ["var(--font-poppins)"],
       },
       backgroundImage: {

@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+// Editorial serif for headings and display text
+const serif = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+// Modern sans-serif for body and UI
+const sans = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.variable}>{children}</body>
+      <body className={`${serif.variable} ${sans.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

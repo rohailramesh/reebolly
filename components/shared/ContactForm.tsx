@@ -17,13 +17,18 @@ import styles from "@/components/shared/HomePage.module.css";
 export function ContactForm() {
   return (
     <>
-      <div id="contact-form">
+      <div id="contact-form" className="wrapper-narrow">
+        <div className="text-center mb-12">
+          <h2 className="heading-editorial text-4xl md:text-5xl mb-4">
+            LET'S CONNECT
+          </h2>
+          <p className="font-sans text-lg text-espresso/80">
+            Have a question or want to work together? Get in touch.
+          </p>
+        </div>
         <Card className={`w-full max-w-md mx-auto ${styles.contactForm}`}>
           <CardHeader>
-            <CardTitle>Contact Reeha</CardTitle>
-            {/* <CardDescription className="text-sm text-black">
-              Fill out the form below to send us a message.
-            </CardDescription> */}
+            <CardTitle className="font-serif text-2xl text-espresso">Contact Reeha</CardTitle>
           </CardHeader>
           <CardContent>
             <form
