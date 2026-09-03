@@ -46,8 +46,7 @@ export default function Experience() {
                   alt={event.name}
                   width={event.width}
                   height={event.height}
-                  className="rounded-lg object-cover mt-1"
-                  layout="responsive"
+                  className="rounded-lg object-cover mt-1 w-full h-auto"
                 />
                 {/* Click Prompt */}
                 <div className="mt-4 flex flex-col items-center">

@@ -81,10 +81,10 @@ const AllEvents = () => {
                       <Image
                         src={event.imageUrl}
                         alt={event.title}
-                        layout="responsive"
                         width={400}
                         height={400}
-                        className="rounded-t-xl"
+                        className="rounded-t-xl w-full h-auto"
+                        style={{ objectFit: 'cover' }}
                       />
                     </div>
                   </Link>
