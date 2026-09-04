@@ -27,6 +27,13 @@ const Header = () => {
             >
               <Link href="/experiences">Experiences</Link>
             </Button>
+            <Button
+              asChild
+              className={`rounded-full ${styles.btn} w-full mt-2`}
+              size="sm"
+            >
+              <Link href="/classes">Classes</Link>
+            </Button>
           </div>
 
           <Link href="/" className="col-span-2 flex justify-center">
@@ -64,6 +71,9 @@ const Header = () => {
             </Button>
             <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
               <Link href="/experiences">Experiences</Link>
+            </Button>
+            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
+              <Link href="/classes">Classes</Link>
             </Button>
             <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
               <Link href="/work">My Work</Link>
