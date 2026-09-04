@@ -1,0 +1,145 @@
+.section {
+  padding: 6rem 0;
+  background-color: #FAF7F2; /* Warm Ivory */
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #302421; /* Espresso */
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #302421; /* Espresso */
+  opacity: 0.85;
+}
+
+/* Form */
+.form {
+  background-color: #FAF7F2; /* Ivory */
+  border: 2px solid #E8D5C4; /* Champagne */
+  border-radius: 16px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .form {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #302421; /* Espresso */
+}
+
+.input,
+.select,
+.textarea {
+  padding: 0.875rem 1rem;
+  border: 2px solid #E8D5C4; /* Champagne */
+  background-color: #FAF7F2; /* Ivory */
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: #302421; /* Espresso */
+  transition: all 0.3s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #302421;
+  opacity: 0.5;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #B85C5C; /* Terracotta */
+  box-shadow: 0 0 0 3px rgba(184, 92, 92, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitButton {
+  background-color: #B85C5C; /* Terracotta */
+  color: #FAF7F2; /* Ivory */
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.25rem 2.5rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background-color: #A04848; /* Terracotta Dark */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 92, 92, 0.4);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .select,
+  .textarea,
+  .submitButton {
+    transition: none;
+  }
+  
+  .submitButton:hover {
+    transform: none;
+  }
+}
