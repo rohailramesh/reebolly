@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
 import "./globals.css";
 
 // Editorial serif for headings and display text
@@ -19,8 +21,8 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ReeBolly",
-  description: "Professional Dancer.",
+  title: "ReeBolly - Dance, Movement, Expression",
+  description: "Professional Bollywood and fusion dance experiences in London. Workshops, classes, choreography, and performances.",
   // icons: {
   //   icon: "/assets/images/logo.svg",
   // },
@@ -34,7 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${serif.variable} ${sans.variable} font-sans antialiased`}>
-        {children}
+        <div className="flex h-screen flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
