@@ -49,7 +49,7 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-decoration: none;
-  height: 500px;
+  min-height: 540px;
 }
 
 .card:hover {
@@ -62,8 +62,9 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 280px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .cardImage {
@@ -97,10 +98,11 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 2rem 1.5rem;
-  height: 40%;
+  flex: 1;
   background-color: #FAF7F2; /* Ivory */
+  min-height: 0;
 }
 
 .cardTitle {

@@ -74,49 +74,47 @@ const AllEvents = () => {
               events.map((event) => (
                 <div
                   key={event._id}
-                  className={`group relative flex flex-col overflow-hidden rounded-xl shadow-md transition-all hover:shadow-lg ${cardStyles.card}`}
+                  className="group relative flex flex-col bg-ivory border-2 border-champagne rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl hover:border-terracotta hover:-translate-y-2 min-h-[600px]"
                 >
-                  <Link href={`/events/${event._id}`}>
-                    <div className={cardStyles.imageContainer}>
-                      <Image
-                        src={event.imageUrl}
-                        alt={event.title}
-                        width={400}
-                        height={400}
-                        className="rounded-t-xl w-full h-auto"
-                        style={{ objectFit: 'cover' }}
-                      />
-                    </div>
+                  <Link href={`/events/${event._id}`} className="relative h-48 overflow-hidden">
+                    <Image
+                      src={event.imageUrl}
+                      alt={event.title}
+                      fill
+                      className="object-cover rounded-t-xl"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </Link>
 
-                  <div className="flex flex-col p-5 gap-5">
+                  <div className="flex flex-col flex-1 p-5 gap-3">
                     <Link href={`/events/${event._id}`}>
-                      <h2 className="text-lg font-semibold font-serif text-espresso">
+                      <h2 className="text-xl font-semibold font-serif text-espresso hover:text-terracotta transition-colors">
                         {event.title}
                       </h2>
                     </Link>
-                    <p className="text-sm text-espresso/80 font-sans">
-                      {event.description.length > 100
-                        ? `${event.description.substring(0, 100)}...`
-                        : event.description}
+                    
+                    <p className="text-sm text-espresso/80 font-sans line-clamp-2 flex-shrink-0">
+                      {event.description}
                     </p>
-                    <p className="text-sm text-espresso/70 font-sans">
-                      📍 {event.location}
-                    </p>
-                    <p className="text-sm text-espresso/70 font-sans">
-                      🕒 {formatDateTime(event.startDateTime).dateTime}
-                    </p>
-                    <p className="text-lg font-semibold text-terracotta font-sans">
-                      {event.price > 0 ? `£${event.price}` : "FREE"}
-                    </p>
-                  </div>
-                  <div className="flex justify-end p-3">
+                    
+                    <div className="flex flex-col gap-2 mt-auto">
+                      <p className="text-sm text-espresso/70 font-sans flex items-center gap-2">
+                        <span>📍</span> {event.location}
+                      </p>
+                      <p className="text-sm text-espresso/70 font-sans flex items-center gap-2">
+                        <span>🕒</span> {formatDateTime(event.startDateTime).dateTime}
+                      </p>
+                      <p className="text-xl font-bold text-terracotta font-sans mt-2">
+                        {event.price > 0 ? `£${event.price}` : "FREE"}
+                      </p>
+                    </div>
+                    
                     <Button
                       asChild
-                      className={`rounded-full ${styles.btn}`}
-                      size="sm"
+                      className="rounded-full w-full mt-4 bg-terracotta text-ivory hover:bg-terracotta-dark"
+                      size="default"
                     >
-                      <Link href={`/events/${event._id}`}>View Details</Link>
+                      <Link href={`/events/${event._id}`}>View Details →</Link>
                     </Button>
                   </div>
                 </div>

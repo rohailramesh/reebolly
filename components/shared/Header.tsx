@@ -25,9 +25,7 @@ const Header = () => {
               className={`rounded-full ${styles.btn} w-full mt-2`}
               size="sm"
             >
-              <Link href="/#contact-form">
-                <h3>Contact</h3>
-              </Link>
+              <Link href="/experiences">Experiences</Link>
             </Button>
           </div>
 
@@ -62,10 +60,13 @@ const Header = () => {
         <div className="hidden sm:flex w-full items-center justify-between">
           <div className="flex items-center gap-10">
             <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/work">My Work</Link>
+              <Link href="/">Home</Link>
             </Button>
             <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/">Home</Link>
+              <Link href="/experiences">Experiences</Link>
+            </Button>
+            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
+              <Link href="/work">My Work</Link>
             </Button>
           </div>
 

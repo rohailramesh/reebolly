@@ -1,0 +1,90 @@
+.hero {
+  position: relative;
+  padding: 8rem 0 6rem;
+  background: linear-gradient(
+    135deg,
+    #E8D5C4 0%,
+    #FAF7F2 50%,
+    #E8D5C4 100%
+  );
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 5rem 0 4rem;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Eyebrow */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #B85C5C; /* Terracotta */
+}
+
+/* Main Heading */
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #302421; /* Espresso */
+  line-height: 1;
+  margin: 1rem 0;
+}
+
+/* Description */
+.description {
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.7;
+  color: #302421; /* Espresso */
+  opacity: 0.85;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .description br {
+    display: none;
+  }
+}
+
+/* Decorative Pattern */
+.pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(184, 92, 92, 0.08) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    background: #E8D5C4;
+  }
+}

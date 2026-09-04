@@ -69,12 +69,13 @@
   border-radius: 12px;
   transition: all 0.3s ease;
   position: relative;
+  min-height: 320px;
 }
 
 @media (min-width: 1024px) {
   .stage {
     flex: 1;
-    min-height: 280px;
+    min-height: 340px;
   }
 }
 
