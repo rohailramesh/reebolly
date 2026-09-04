@@ -1,10 +1,233 @@
-.btn {
+/* Header Container */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: rgba(250, 247, 242, 0.98); /* Ivory with slight transparency */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #E8D5C4; /* Champagne */
+  box-shadow: 0 1px 3px rgba(48, 36, 33, 0.05);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  gap: 2rem;
+}
+
+/* Logo */
+.logoLink {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+.logoLink:hover {
+  opacity: 0.8;
+}
+
+.logo {
+  height: auto;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #302421; /* Espresso */
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #B85C5C; /* Terracotta */
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: #B85C5C; /* Terracotta */
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Desktop CTA */
+.desktopCta {
+  display: none;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .desktopCta {
+    display: block;
+  }
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
   background-color: #B85C5C; /* Terracotta */
   color: #FAF7F2; /* Ivory */
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2rem;
   transition: all 0.3s ease;
 }
 
-.btn:hover {
+.ctaButton:hover {
   background-color: #A04848; /* Terracotta Dark */
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 92, 92, 0.3);
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #302421; /* Espresso */
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #FAF7F2; /* Ivory */
+  border-top: 1px solid #E8D5C4; /* Champagne */
+  margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .mobileNav {
+    display: none;
+  }
+}
+
+.mobileNavOpen {
+  max-height: 500px;
+  padding-bottom: 1.5rem;
+}
+
+.mobileNavLink {
+  padding: 1rem 0;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #302421; /* Espresso */
+  text-decoration: none;
+  border-bottom: 1px solid #E8D5C4; /* Champagne */
+  transition: all 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: #B85C5C; /* Terracotta */
+  padding-left: 0.5rem;
+}
+
+.mobileCtaButton {
+  display: inline-block;
+  padding: 1rem 1.75rem;
+  margin-top: 1rem;
+  background-color: #B85C5C; /* Terracotta */
+  color: #FAF7F2; /* Ivory */
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.mobileCtaButton:hover {
+  background-color: #A04848; /* Terracotta Dark */
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .navLink::after,
+  .ctaButton,
+  .mobileNavLink,
+  .hamburger span {
+    transition: none;
+  }
+  
+  .ctaButton:hover {
+    transform: none;
+  }
 }

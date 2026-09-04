@@ -1,103 +1,90 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  return (
-    <header className="w-full border-b">
-      <div className="wrapper relative flex flex-col sm:flex-row items-center justify-between p-4 gap-4 sm:gap-2">
-        {/* Mobile layout with logo in center, links around */}
-        <div className="w-full sm:hidden grid grid-cols-4 items-center">
-          <div className="flex flex-col items-end">
-            <Button
-              asChild
-              className={`rounded-full ${styles.btn} w-full`}
-              size="sm"
-            >
-              <Link className={"font-cursive"} href="/">
-                Home
-              </Link>
-            </Button>
-            <Button
-              asChild
-              className={`rounded-full ${styles.btn} w-full mt-2`}
-              size="sm"
-            >
-              <Link href="/experiences">Experiences</Link>
-            </Button>
-            <Button
-              asChild
-              className={`rounded-full ${styles.btn} w-full mt-2`}
-              size="sm"
-            >
-              <Link href="/classes">Classes</Link>
-            </Button>
-          </div>
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-          <Link href="/" className="col-span-2 flex justify-center">
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/experiences", label: "Experiences" },
+    { href: "/classes", label: "Classes" },
+    { href: "/choreography", label: "Choreography" },
+    { href: "/work", label: "About" },
+  ];
+
+  return (
+    <header className={styles.header}>
+      <div className="wrapper">
+        <div className={styles.container}>
+          {/* Logo */}
+          <Link href="/" className={styles.logoLink}>
             <Image
               src="/assets/images/logo3.png"
-              width={128}
-              height={38}
-              alt="logo"
+              width={140}
+              height={42}
+              alt="ReeBolly - Dance, Movement, Expression"
               className={styles.logo}
+              priority
             />
           </Link>
-          <div className="flex flex-col items-start">
-            <Button
-              asChild
-              className={`rounded-full ${styles.btn} w-full`}
-              size="sm"
-            >
-              <Link href="/work">My Work</Link>
-            </Button>
-            <Button
-              asChild
-              className={`rounded-full ${styles.btn} w-full mt-2`}
-              size="sm"
-            >
-              <Link href="/#all-events">Workshops</Link>
-            </Button>
+
+          {/* Desktop Navigation */}
+          <nav className={styles.desktopNav}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={styles.navLink}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className={styles.desktopCta}>
+            <Link href="/#contact-form" className={styles.ctaButton}>
+              Get In Touch
+            </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className={styles.mobileMenuButton}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <span className={`${styles.hamburger} ${mobileMenuOpen ? styles.open : ""}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
         </div>
 
-        {/* Desktop layout */}
-        <div className="hidden sm:flex w-full items-center justify-between">
-          <div className="flex items-center gap-10">
-            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/">Home</Link>
-            </Button>
-            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/experiences">Experiences</Link>
-            </Button>
-            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/classes">Classes</Link>
-            </Button>
-            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/work">My Work</Link>
-            </Button>
-          </div>
-
-          <Link href="/" className="mx-4">
-            <Image
-              src="/assets/images/logo3.png"
-              width={128}
-              height={38}
-              alt="logo"
-              className={styles.logo}
-            />
+        {/* Mobile Navigation */}
+        <div className={`${styles.mobileNav} ${mobileMenuOpen ? styles.mobileNavOpen : ""}`}>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={styles.mobileNavLink}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/#contact-form"
+            className={styles.mobileCtaButton}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Get In Touch
           </Link>
-
-          <div className="flex items-center gap-10">
-            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/#all-events">Workshops</Link>
-            </Button>
-            <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-              <Link href="/#contact-form">Contact</Link>
-            </Button>
-          </div>
         </div>
       </div>
     </header>
@@ -105,38 +92,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// import React from "react";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { Button } from "../ui/button";
-// import styles from "./Header.module.css";
-// const Header = () => {
-//   return (
-//     <header className="w-full border-b">
-//       <div className="wrapper flex items-center justify-between">
-//         <Link href="/" className="w-40">
-//           <Image
-//             src="/assets/images/logo.png"
-//             width={128}
-//             height={38}
-//             alt="logo"
-//             className={styles.logo}
-//           />
-//         </Link>
-//         <Button asChild className={`rounded-full ${styles.btn}`} size="sm">
-//           <Link href="/work">My Work</Link>
-//         </Button>
-//         {/* Link to contact-form and projects page */}
-//         <Button asChild className={`rounded-full ${styles.btn}`} size="sm">
-//           <Link href="/#all-events">Attend Workshops</Link>
-//         </Button>
-//         <Button asChild className={`rounded-full ${styles.btn}`} size="sm">
-//           <Link href="/#contact-form">Contact Me</Link>
-//         </Button>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
