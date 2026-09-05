@@ -1,30 +1,29 @@
+"use client";
 import React from "react";
+import AboutHero from "@/components/shared/AboutHero";
+import ReeBollyStory from "@/components/shared/ReeBollyStory";
+import Credentials from "@/components/shared/Credentials";
 import Experience from "@/components/shared/Experience";
 import Project from "@/components/shared/Projects";
-import Link from "next/link";
-import styles from "@/components/shared/HomePage.module.css";
-import { Button } from "@/components/ui/button";
-const MyWorkAndProjects = () => {
+
+const AboutPage = () => {
   return (
     <>
-      <section className="wrapper my-20">
-        <Experience />
-      </section>
-      {/* <br /> */}
+      <AboutHero />
+      <ReeBollyStory />
+      <Credentials />
+      
+      {/*/!* Experience Showcase *!/*/}
+      {/*<section className="wrapper py-16 md:py-24 bg-champagne">*/}
+      {/*  <Experience />*/}
+      {/*</section>*/}
 
-      <section className="wrapper my-20">
-        <Project />
-      </section>
-      <br />
-      <br />
-      <div className="flex-center flex ">
-        <Button asChild className={`rounded-full ${styles.btn}`} size="lg">
-          <Link href="/">Go Back</Link>
-        </Button>
-      </div>
-      <br />
+      {/*/!* Projects Showcase *!/*/}
+      {/*<section className="wrapper py-16 md:py-24">*/}
+      {/*  <Project />*/}
+      {/*</section>*/}
     </>
   );
 };
 
-export default MyWorkAndProjects;
+export default AboutPage;

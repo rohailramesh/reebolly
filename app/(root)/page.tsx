@@ -36,9 +36,9 @@ const HomePage = () => {
       <CommunityStory />
 
       {/* Testimonials Section */}
-      <section className="section-sm">
-        <TestimonialSlider testimonials={testimonials} />
-      </section>
+      {/*<section className="section-sm">*/}
+      {/*  <TestimonialSlider testimonials={testimonials} />*/}
+      {/*</section>*/}
 
       {/* Work With ReeBolly Section */}
       <WorkWithReeBolly />

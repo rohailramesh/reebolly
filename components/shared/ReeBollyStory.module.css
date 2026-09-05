@@ -1,0 +1,113 @@
+.section {
+  padding: 6rem 0;
+  background-color: #E8D5C4; /* Champagne */
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* Quote */
+.quoteWrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.quote {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: #B85C5C; /* Terracotta */
+  line-height: 1.3;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Story Wrapper */
+.storyWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.storyBox {
+  background-color: #FAF7F2; /* Ivory */
+  padding: 2.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #B85C5C; /* Terracotta */
+  box-shadow: 0 4px 12px rgba(184, 92, 92, 0.1);
+}
+
+@media (max-width: 767px) {
+  .storyBox {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.storyTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: #302421; /* Espresso */
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.storyText {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #302421; /* Espresso */
+  opacity: 0.9;
+}
+
+.storyText strong {
+  color: #B85C5C; /* Terracotta */
+  font-weight: 600;
+}
+
+/* Philosophy */
+.philosophy {
+  background-color: #FAF7F2; /* Ivory */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(184, 92, 92, 0.1);
+}
+
+@media (max-width: 767px) {
+  .philosophy {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.philosophyTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: #302421; /* Espresso */
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.philosophyText {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #302421; /* Espresso */
+  opacity: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .quoteWrapper {
+    margin-bottom: 3rem;
+  }
+  
+  .storyWrapper {
+    gap: 2rem;
+  }
+}
